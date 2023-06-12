@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find kortex_driver)/launch/kortex_driver.launch">
+    <arg name="arm" value="gen3_lite"/>
+    <arg name="dof" value="6"/> 
+    <arg name="vision" value="false"/>
+    <arg name="use_hard_limits" value="false"/> <!-- Set soft limits as hard limits (Gen3 only) -->
+    <arg name="gripper" value="gen3_lite_2f"/>
+    <arg name="robot_name" value="my_$(arg arm)"/>
+    <arg name="prefix" value="kinova_arm_"/>
+    <arg name="ip_address" value="192.168.131.40"/>
+    <arg name="username" value="admin"/>
+    <arg name="password" value="admin"/>
+    <arg name="cyclic_data_publish_rate" value="40"/>
+    <arg name="api_rpc_timeout_ms" value="2000"/>
+    <arg name="api_session_inactivity_timeout_ms" value="35000"/>
+    <arg name="api_connection_inactivity_timeout_ms" value="20000"/>
+    <arg name="start_rviz" value="false"/>
+    <arg name="start_moveit" value="true"/>
+    <arg name="value_goal_time_tolerance" value="0.5"/> <!--seconds-->
+    <arg name="value_goal_tolerance" value="0.005"/> <!--radians-->
+  </include>
+</launch>
