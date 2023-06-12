@@ -106,7 +106,7 @@
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
         <!-- Start RViz -->
-        <node name="rviz" pkg="rviz" type="rviz" output="log" args="-f base_link" if="$(arg start_rviz)"/> 
+        <node name="rviz" pkg="rviz" type="rviz" output="log" args="-f base_link -d $(find kortex_description)/../kortex_move_it_config/$(arg arm)_$(arg gripper)_move_it_config/launch/moveit.rviz" if="$(arg start_rviz)"/> 
 
         <!-- Tests -->
         <!-- Initialization test and custom functional tests -->
